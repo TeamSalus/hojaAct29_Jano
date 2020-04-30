@@ -3,6 +3,7 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const controlador = require("./routes/controlador.js");
 const handlers_ln = require("./lib/handlers/handlers_ln.js");
+var cors = require('cors')
 
 const port = process.env.PORT || 3000;
 
@@ -22,6 +23,7 @@ app.use(
 		extended: false,
 	})
 );
+	
 
 app.use(express.json());
 
@@ -33,4 +35,6 @@ app.use(handlers_ln.atiende404);
 
 app.use(handlers_ln.atiende500);
 
-app.listen(port, () => console.log("Escuchando..."));
+
+
+app.listen(port, ()=>console.log("Escuchando"))
