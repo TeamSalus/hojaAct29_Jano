@@ -1,15 +1,10 @@
 async function datos() {
-	let url =
-		"https://reststop.randomhouse.com/resources/works/?start=0&max=10&expandLevel=1&search=" +
-		document.getElementById("id_busqueda").value;
-	console.log(url);
+	
+	let url = ("https://api.penguinrandomhouse.com/resources/works?search=" + document.getElementById("id_busqueda").value + "&start=0&max=15&expandLevel=1&key=9kjnk53qkh6qy6vrca7fsug4");
 	let datos = await fetch(url);
-	console.log(datos);
-	let resultadoJson = await datos.json();
-	console.log(resultadosJson);
-
-	//document.getElementById('temperatura').innerHTML = template({minima:minima,maxima:maxima})
+	let Json = await datos.json();
+	console.log(Json);
 }
 
 document.getElementById("botonDatos").addEventListener("click", datos);
-//document.load = datos()
+
